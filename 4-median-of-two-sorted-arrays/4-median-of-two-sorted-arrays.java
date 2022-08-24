@@ -44,12 +44,12 @@ class Solution {
         
         
         int n=arr.length;
-          int mid=n/2;
+          int mid=(n-1)/2;
         
         if(n%2==0)
         {
            
-            median=(arr[mid]+arr[mid-1])/2.0;
+            median=(arr[mid]+arr[mid+1])/2.0;
           
         }
         
