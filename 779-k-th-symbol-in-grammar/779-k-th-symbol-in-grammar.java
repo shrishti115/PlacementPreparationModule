@@ -7,7 +7,7 @@ class Solution {
         int mid= (int)Math.pow(2,n-1)/2;
         if(k>mid)
         {
-           a= (kthGrammar (n-1, k-mid)==1)?0:1;
+           a= 1-kthGrammar (n-1, k-mid);
         }
         else 
             a=kthGrammar(n-1,k);
