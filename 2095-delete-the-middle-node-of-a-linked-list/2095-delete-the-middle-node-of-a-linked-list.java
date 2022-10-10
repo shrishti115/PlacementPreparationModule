@@ -22,7 +22,8 @@ class Solution {
             f=f.next.next;
             
         }
-       if(n==null) 
+      
+         if(n==null) 
         return null;
         
     n.next=s.next;
