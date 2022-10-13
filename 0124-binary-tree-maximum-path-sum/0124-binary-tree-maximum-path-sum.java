@@ -31,8 +31,8 @@ class Solution {
         int h=max(root.right);
         
         l=Math.max(l,0);
-         h=Math.max(h,0);
-        
+        h=Math.max(h,0);
+       
         
        maxPath = Math.max(maxPath, root.val + l + h);
         return root.val + Math.max(l, h);
