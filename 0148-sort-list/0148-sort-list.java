@@ -15,25 +15,60 @@ class Solution {
         if(head==null || head.next==null)
             return head;
         
-        ArrayList<Integer> array=new ArrayList<>();
+        ListNode s=head;
+        ListNode f=head;
+        ListNode prev=null;
         
-        while(t!=null)
+        while(f!=null && f.next!=null)
         {
-            array.add(t.val);
-            t=t.next;
+            prev=s;
+            s=s.next;
+            f=f.next.next;
+            
         }
         
-        Collections.sort(array);
-      
+        prev.next=null;
+        
+        ListNode left=sortList(head);
+        ListNode right=sortList(s);
+        
+      return  merge(left,right);
+    }
+    public ListNode merge(ListNode l, ListNode r)
+    {
         
         ListNode h=new ListNode();
         ListNode ans=h;
-        for(int i=0;i<array.size();i++)
+        if(l==null)
+            return r;
+        if(r==null)
+            return l;
+        
+        while(l!=null && r!=null)
         {
-            h.next=new ListNode(array.get(i));
+            if(l.val<=r.val)
+            {
+                h.next=l;
+                l=l.next;
+            }
+            else
+            {
+                h.next=r;
+                r=r.next;
+            }
             h=h.next;
-        }
-       
+        } 
+            if(l!=null)
+            {
+                h.next=l;
+            }
+            
+            if(r!=null)
+            {
+                h.next=r;
+            }
+                
         return ans.next;
     }
+    
 }
