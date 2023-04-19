@@ -41,7 +41,7 @@ class Solution {
         {
             
             
-           if(arr[i]>secondmax && arr[i]>max)
+           if(arr[i]>max)
           {
               secondmax=max;
               max=arr[i];
