@@ -35,21 +35,18 @@ public class Main {
 
 class Solution {
     int rowWithMax1s(int arr[][], int n, int m) {
-        // code here
-        int j=0;
+        int row = -1; // initialize row index to -1
+        int maxOnes = 0; // initialize maxOnes to 0
+        int j = m - 1; // initialize j to the last column
         
-       for(int i=0;i<m;i++)
-       {
-           j=0;
-           while(j<n)
-           {
-               if(arr[j][i]!=0)
-               {
-                   return j;
-               }
-               j++;
-           }
-       }
-       return -1;
+        for (int i = 0; i < n; i++) {
+            while (j >= 0 && arr[i][j] == 1) { // move left in current row if 1 is found
+                j--;
+                // update maxOnes to current column index + 1
+                row = i; // update row index to current row index
+            }
+        }
+        
+        return row;
     }
 }
