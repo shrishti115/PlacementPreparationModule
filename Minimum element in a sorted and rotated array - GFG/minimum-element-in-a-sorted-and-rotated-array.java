@@ -42,9 +42,7 @@ class Solution
         while (start < end) {
              mid = start + (end - start) / 2;
 
-        
-
-            if (nums[start]<=nums[mid] && nums[mid]>=nums[end]) {
+            if (nums[start]<=nums[mid] && nums[end]<nums[mid]) {
                 start = mid + 1;
                 
             } else
